@@ -1,0 +1,11 @@
+﻿.gitignore
+tmp/
+log/
+Thumbs.db
+DS_Store*
+ehthumbs.db
+Thumbs.db
+.DS_Store
+.jshintrc
+node_modules/
+dist/
