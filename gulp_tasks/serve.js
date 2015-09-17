@@ -1,4 +1,4 @@
-// Scripts Task
+// Serve Task
 var gulp = require('gulp'),
     webserver = require('gulp-webserver');
 

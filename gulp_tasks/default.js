@@ -1,4 +1,4 @@
-// Scripts Task
+// Default Task
 var gulp = require('gulp'),
     runSequence = require('run-sequence');
 
