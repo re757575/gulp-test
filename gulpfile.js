@@ -84,6 +84,28 @@ gulp.task('watch', function() {
     gulp.watch('./lib/*.js', ['scripts']);
 });
 
+// Hook Task
+gulp.task('hook', function () {
+  return gulp.src(['.pre-commit'])
+      .pipe($.symlink(function() {
+        return new $.symlink.File({
+              cwd: process.cwd(),
+              path: '.git/hooks/pre-commit'
+          });
+        }, {force: true}
+      ));
+});
+
+// pre-commit js lint Task
+gulp.task('lint', function() {
+  return gulp.src([
+      './lib/*.js'
+  ])
+    .pipe($.jshint('./lib/.jshintrc'))
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.jshint.reporter('fail'));
+});
+
 // Default Task
 
 // gulp.task('default', ['scripts']);
