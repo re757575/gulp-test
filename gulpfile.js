@@ -45,7 +45,15 @@ gulp.task('scripts', function() {
         .pipe(rename({ suffix: '.min' }))
 
         // js最小化
-        .pipe(uglify())
+        .pipe(
+            uglify({
+              output: {
+                ascii_only: true
+              },
+              compress: {
+                drop_console: true
+            }})
+        )
 
         // 存放 main.min.js 至 dist 目錄
         .pipe(gulp.dest('./dist/'))
