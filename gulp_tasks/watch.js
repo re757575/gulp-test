@@ -7,7 +7,7 @@ function watch() {
     gulp.start('serve');
 
     // 監看 lib 目錄下的所有 js 檔案
-    gulp.watch('./lib/*.js', ['scripts']);
+    gulp.watch('./lib/*.js', ['scripts', 'browserify']);
 }
 
 gulp.task('watch', watch);
