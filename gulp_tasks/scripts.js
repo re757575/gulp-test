@@ -33,8 +33,8 @@ function scripts() {
         // 將 js 檔案合併成 main.js, 分隔為換行
         .pipe(concat('main.js', {newLine: '\n'}))
 
-        // 存放 main.js 至 dist 目錄
-        .pipe(gulp.dest('./dist/'))
+        // 存放 main.js 的路徑
+        .pipe(gulp.dest('./public/dist/js/'))
 
         // 複製 main.js 並檔名修改成 main.min.js
         .pipe(rename({ suffix: '.min' }))
@@ -50,8 +50,8 @@ function scripts() {
             }})
         )
 
-        // 存放 main.min.js 至 dist 目錄
-        .pipe(gulp.dest('./dist/'))
+        // 存放 main.min.js 的路徑
+        .pipe(gulp.dest('./public/dist/js/'))
 
         // 通知 Scripts Task 已完成
         .pipe(notify({ message: 'Scripts task complete' }));
