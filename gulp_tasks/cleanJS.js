@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 function cleanJS() {
 
     // 刪除 路徑下所有 js 檔案
-    gulp.src(['./dist/*.js'], {
+    gulp.src(['./public/dist/**/*.js', './public/dist/**/*.map'], {
       read: false // 不讀取檔案(return file.contents as null and not read the file)
     })
     .pipe(clean());
